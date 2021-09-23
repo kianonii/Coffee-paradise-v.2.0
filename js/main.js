@@ -5,8 +5,6 @@ if (navbarToggler) {
         document.body.classList.toggle('_lock');
         navbarToggler.classList.toggle('_active');
         navBody.classList.toggle('_active');
-        // document.querySelector('.icon-scroll').classList.toggle('_hide');
-        // document.querySelector('.widgets').classList.toggle('_hide')
     });
 };
 
@@ -17,8 +15,9 @@ $('.carousel').owlCarousel({
     items: 3.5,
     // !включить после верстки слайдера
     autoplay: true,
+    smartSpeed: 500,
     responsive: {
-        1000: {
+        1100: {
             items: 3.5,
         },
 
@@ -102,6 +101,7 @@ $('.reviews-carousel').owlCarousel({
     loop: true,
     dots: true,
     dotsContainer: ".reviews-dots", 
+    smartSpeed: 500,
 
     responsive: {
         0: {
@@ -110,6 +110,10 @@ $('.reviews-carousel').owlCarousel({
         },
 
         769: {
+            items: 2.5,
+        },
+
+        1100: {
             center: false,
             items: 3,
         }
