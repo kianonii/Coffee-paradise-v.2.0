@@ -2,6 +2,8 @@
 $main-orange: #BC6F30;
 
 .header {
+    transition: 0.2s;
+
     padding-top: 40px;
     background-color: transparent;
     position: absolute;
@@ -169,6 +171,34 @@ $main-orange: #BC6F30;
         left: 0;
         top: 0;
         width: 100%;
-        z-index: 100;
+        z-index: 50;
+        padding: 10px 0px 10px 0px;
+        background-color: #F2D6B1;
+
+        .navbar {
+            .navbar__body {
+                .nav__item {
+                    .nav__link {
+                        color: #3D3946;
+
+                        &:hover {
+                            color: #000000;
+                        }
+
+                        &.active {
+                            color: #000000;
+
+                            &::before {
+                                width: 10px;
+                                height: 2px;
+                                left: -20px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

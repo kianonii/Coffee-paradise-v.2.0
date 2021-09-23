@@ -1,5 +1,7 @@
 @charset "UTF-8";
 .header {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   padding-top: 40px;
   background-color: transparent;
   position: absolute;
@@ -196,7 +198,30 @@
   left: 0;
   top: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 50;
+  padding: 10px 0px 10px 0px;
+  background-color: #F2D6B1;
+}
+
+.header.scrolled .navbar .navbar__body .nav__item .nav__link {
+  color: #3D3946;
+}
+
+.header.scrolled .navbar .navbar__body .nav__item .nav__link:hover {
+  color: #000000;
+}
+
+.header.scrolled .navbar .navbar__body .nav__item .nav__link.active {
+  color: #000000;
+}
+
+.header.scrolled .navbar .navbar__body .nav__item .nav__link.active::before {
+  width: 10px;
+  height: 2px;
+  left: -20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 body {
@@ -327,7 +352,7 @@ body._lock {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #232029;
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 3px;
 }
 
@@ -795,7 +820,7 @@ button {
 }
 
 .widgets {
-  margin: -150px 0px 0px 0px;
+  margin: -150px 0px 150px 0px;
 }
 
 @media screen and (max-width: 768px) {
@@ -952,12 +977,14 @@ button {
 }
 
 .about-section {
-  padding: 120px 0px 10px 0px;
+  padding: 20px 0px 10px 0px;
+  margin: 0px 0px 110px 0px;
 }
 
 @media screen and (max-width: 768px) {
   .about-section {
     padding: 80px 0px 10px 0px;
+    margin: 0px 0px 70px 0px;
   }
 }
 
@@ -1071,13 +1098,8 @@ button {
 }
 
 .bestsellers-section {
-  padding: 120px 0px 0px 0px;
-}
-
-@media screen and (max-width: 786px) {
-  .bestsellers-section {
-    padding: 70px 0px 0px 0px;
-  }
+  padding: 10px 0px 0px 0px;
+  margin: 0px 0px 80px 0px;
 }
 
 .bestsellers-section .bestsellers__title {
@@ -1243,7 +1265,14 @@ button {
 }
 
 .advantages {
-  padding: 90px 0px 0px 0px;
+  padding: 10px 0px 0px 0px;
+  margin: 0px 0px 130px 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .advantages {
+    margin: 0px 0px 80px 0px;
+  }
 }
 
 .advantages .container .section__title .section-subtitle {
@@ -1373,13 +1402,8 @@ button {
 }
 
 .facts {
-  padding: 140px 0px 0px 0px;
-}
-
-@media screen and (max-width: 768px) {
-  .facts {
-    padding: 90px 0px 0px 0px;
-  }
+  padding: 10px 0px 0px 0px;
+  margin: 0px 0px 114px 0px;
 }
 
 .facts .carousel-box {
@@ -1563,7 +1587,7 @@ button {
 }
 
 .reviews {
-  padding: 124px 0px 0px 0px;
+  padding: 10px 0px 0px 0px;
 }
 
 .reviews .container .section__title .section-subtitle {

@@ -1,3 +1,5 @@
+// navbar
+
 const navbarToggler = document.querySelector('.navbar__icon');
 const navBody = document.querySelector('.navbar__body');
 if (navbarToggler) {    
@@ -7,6 +9,68 @@ if (navbarToggler) {
         navBody.classList.toggle('_active');
     });
 };
+
+// scroll to sectiont
+
+const navLinks = document.querySelectorAll('.nav__link[data-goto]');
+
+if(navLinks.length > 0) {
+    navLinks.forEach(navLink => {
+        navLink.addEventListener('click', onNavLinkClick);
+    });
+    
+    function onNavLinkClick(e) {
+        const navLink = e.target;
+    
+        if(navLink.dataset.goto && document.querySelector(navLink.dataset.goto)){
+            const gotoBlock = document.querySelector(navLink.dataset.goto); // обьект к которому перемещает ссылка
+    
+            const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - header.offsetHeight; // точное положение обьекта 
+    
+            window.scrollTo({
+                top: gotoBlockValue,
+                behavior: "smooth"
+            });
+
+            navbarToggler.classList.remove('_active');
+            navBody.classList.remove('_active');
+            document.body.classList.remove('_lock')
+
+            e.preventDefault();
+        };
+    };
+};
+// active class of menu items onscroll
+
+window.addEventListener('scroll', () => {
+	let scrollDistance = window.scrollY;
+
+	if (window.innerWidth > 768) {
+		document.querySelectorAll('section').forEach((el, i) => {
+			if (el.offsetTop - document.querySelector('.nav').clientHeight <= scrollDistance) {
+				document.querySelectorAll('.nav a').forEach((el) => {
+					if (el.classList.contains('active')) {
+						el.classList.remove('active');
+					}
+				});
+
+				document.querySelectorAll('.nav li')[i].querySelector('a').classList.add('active');
+			}
+		});
+	}
+});
+
+// header scrolling
+
+const header = document.querySelector('header');
+
+window.onscroll = function() {
+    if(window.pageYOffset > 100) {
+        header.classList.add('scrolled')
+    }else {
+        header.classList.remove('scrolled')
+    }
+}
 
 // bestsellers carousel 
 
@@ -33,9 +97,6 @@ $('.carousel').owlCarousel({
 })
 
 // facts carousel 
-// const nextIcon = '<img src = "../img/icons/next.svg">';
-// const prevIcon = '<img src = "../img/icons/prev.svg">';
-
 
 $('.facts-carousel').owlCarousel ({
     items: 1,
@@ -45,15 +106,11 @@ $('.facts-carousel').owlCarousel ({
     dots: true,
     navContainer: ".carousel-control",
     dotsContainer: ".dots", 
-    // navText: [
-    //     prevIcon,
-    //     nextIcon
-    // ],
     smartSpeed: 500,
     mouseDrag: false,
 });
 
-//popup 
+// reviews popup 
 
 const popupBtn = document.querySelector('.review-btn');
 const popupOverlay = document.querySelector('.review-popup');
@@ -62,37 +119,20 @@ const closeBtn = document.querySelector('.close-btn');
 const carousel = document.querySelector('.reviews-carousel');
 
 popupBtn.addEventListener('click', function(){
-    popupOverlay.classList.add('active')
-    popup.classList.add('active')
+    popupOverlay.classList.add('active');
+    popup.classList.add('active');
     if(popup.classList.contains('active')) {
-        carousel.classList.add('hide')
+        carousel.classList.add('hide');
     }
-    // document.body.classList.add('_lock')
-})
+    document.body.classList.add('_lock');
+});
 
 closeBtn.addEventListener('click', function(){
     popupOverlay.classList.remove('active')
     popup.classList.remove('active')
     carousel.classList.remove('hide')
-    // document.body.classList.remove('_lock')
-})
-
-// reviews 
-const username = document.querySelector('.username');
-const reviewText = document.querySelector('#reviewText');
-const submit = document.querySelector('.submit');
-
-submit.addEventListener('click', function(){
-    let user = username.value;
-    let text = reviewText.value;
-    
-    console.log(user + ' typed ' + text);
-    
-    popupOverlay.classList.remove('active')
-    popup.classList.remove('active')
-    carousel.classList.remove('hide')
-
-})
+    document.body.classList.remove('_lock')
+});
 
 // reviews carousel 
 
