@@ -1,0 +1,174 @@
+// colors
+$main-orange: #BC6F30;
+
+.header {
+    padding-top: 40px;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    @media screen and (max-width: 768px) {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100% !important;
+        background: #F2D6B1;
+        padding: 10px 0;
+        z-index: 100 !important;
+    }
+    .header__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .site__logo {
+        font-size: 24px;
+        z-index: 5;
+    }
+    .navbar {
+        .navbar__icon {
+            display: none;
+            @media screen and (max-width: 767px) {
+                display: block;
+                position: relative;
+                width: 25px;
+                height: 25px;
+                z-index: 5;
+                cursor: pointer;
+                span {
+                    transition: 0.2s;
+    
+                    position: absolute;
+                    top: 50%;left: 0;
+                    width: 100%;
+                    height: 2px;
+                    transform: translate(0, -50%);
+                    background: #000;
+                    border-radius: 3px;
+                }
+                &::before {
+                    transition: 0.2s;
+                    
+                    content: '';
+                    position: absolute;
+                    top: 0;left: 0;
+                    width: 100%;height: 2px;
+                    background: #000;
+                    border-radius: 3px;
+                }
+                &::after {
+                    transition: 0.2s;
+                    
+                    content: '';
+                    position: absolute;
+                    bottom: 0;left: 0;
+                    width: 100%;height: 2px;
+                    background: #000;
+                    border-radius: 3px;
+                }
+            }
+            &._active {
+                span {
+                    opacity: 0;
+                }
+
+                &::before {
+                    top: 50%;
+                    transform: translate(0, -50%) rotate(-45deg);
+                }
+
+                &::after {
+                    bottom: 50%;
+                    transform: translate(0, 50%) rotate(45deg);
+                }
+            }
+        }
+        .navbar__body {
+            @media screen and (max-width: 767px) {
+                transition: left .3s ease 0s;
+
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background-color: #F2D6B1;
+                border-bottom: 1px solid rgba(36, 32, 32, .5);
+                // display: flex;
+                // align-items: center;
+                // justify-content: center;
+                padding: 50px 0px 0px 0px;
+                &._active {
+                    left: 0;
+                }
+                .nav__item {
+                    width: 100%;
+                    padding: 20px !important;
+
+                    &:first-child {
+                        border-top: 1px solid #000;
+                    }
+                    border-bottom: 1px solid #000;
+                }
+                .nav__link {
+                    font-weight: 800 !important;
+                    text-transform: uppercase;
+                    color: black !important;
+
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+            .nav {
+                @media screen and (min-width: 767px) {
+                    display: flex;
+                }
+                .nav__item {
+                    padding: 5px 0;
+                    margin-right: 28px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    .nav__link {
+                        transition: color 0.2s;
+
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 140%;
+                        color: #fff;
+                        position: relative;
+                        padding: 5px 0;
+                        &::before {
+                            transition: width 0.2s;
+
+                            content: '';
+                            position: absolute;
+                            width: 0;height: 1px;
+                            left: 0;bottom: 0;
+                            background-color: $main-orange;
+                        }
+                        &:hover {
+                            color: #fff;
+                        }
+                        &.active {
+                            color: #fff;
+                            &::before {
+                               width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.scrolled {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+    }
+}
