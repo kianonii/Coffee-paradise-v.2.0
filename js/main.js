@@ -40,25 +40,6 @@ if(navLinks.length > 0) {
         };
     };
 };
-// active class of menu items onscroll
-
-window.addEventListener('scroll', () => {
-	let scrollDistance = window.scrollY;
-
-	if (window.innerWidth > 768) {
-		document.querySelectorAll('section').forEach((el, i) => {
-			if (el.offsetTop - document.querySelector('.nav').clientHeight <= scrollDistance) {
-				document.querySelectorAll('.nav a').forEach((el) => {
-					if (el.classList.contains('active')) {
-						el.classList.remove('active');
-					}
-				});
-
-				document.querySelectorAll('.nav li')[i].querySelector('a').classList.add('active');
-			}
-		});
-	}
-});
 
 // header scrolling
 
@@ -159,3 +140,18 @@ $('.reviews-carousel').owlCarousel({
         }
     }
 })
+
+// to top btn 
+
+$(function() {
+    $(window).scroll(function() {
+    if($(this).scrollTop() >= 2300) {
+        $('.back-to-top').fadeIn();
+    } else {
+        $('.back-to-top').fadeOut();
+    }
+    });
+        $('.back-to-top').click(function() {
+        $('body,html').animate({scrollTop:0}, 500);
+    });
+});

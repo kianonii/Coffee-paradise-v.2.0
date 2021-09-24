@@ -170,27 +170,28 @@
 }
 
 .header .navbar .navbar__body .nav .nav__item .nav__link::before {
-  -webkit-transition: width 0.2s;
-  transition: width 0.2s;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
   content: '';
   position: absolute;
-  width: 0;
+  width: 100%;
   height: 1px;
   left: 0;
   bottom: 0;
   background-color: #BC6F30;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
 }
 
 .header .navbar .navbar__body .nav .nav__item .nav__link:hover {
   color: #fff;
 }
 
-.header .navbar .navbar__body .nav .nav__item .nav__link.active {
-  color: #fff;
-}
-
-.header .navbar .navbar__body .nav .nav__item .nav__link.active::before {
-  width: 100%;
+.header .navbar .navbar__body .nav .nav__item .nav__link:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 .header.scrolled {
@@ -209,19 +210,6 @@
 
 .header.scrolled .navbar .navbar__body .nav__item .nav__link:hover {
   color: #000000;
-}
-
-.header.scrolled .navbar .navbar__body .nav__item .nav__link.active {
-  color: #000000;
-}
-
-.header.scrolled .navbar .navbar__body .nav__item .nav__link.active::before {
-  width: 10px;
-  height: 2px;
-  left: -20px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 body {
@@ -413,6 +401,36 @@ body._lock {
 
 .carousel-control .owl-prev img, .carousel-control .owl-next img {
   width: 24px;
+}
+
+.back-to-top {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 6px 15px;
+  border: none;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.back-to-top:hover {
+  background-color: #fff;
+}
+
+.back-to-top img {
+  margin: 0px 0px 0px 10px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  width: 18px;
 }
 
 /* Указываем box sizing */
