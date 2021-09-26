@@ -1661,13 +1661,10 @@ button {
   z-index: -1 !important;
 }
 
-.reviews .container .reviews-box .reviews-carousel .owl-item {
-  padding: 30px 0;
-}
-
 .reviews .container .reviews-box .reviews-carousel .reviews__item {
   width: 370px;
   height: 100%;
+  min-height: 222px;
   border-radius: 10px;
   padding: 10px;
   display: -webkit-box;

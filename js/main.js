@@ -123,7 +123,8 @@ $('.reviews-carousel').owlCarousel({
     dots: true,
     dotsContainer: ".reviews-dots", 
     smartSpeed: 500,
-
+    autoHeight:true,
+    
     responsive: {
         0: {
             center: true,
