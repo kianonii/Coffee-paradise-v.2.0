@@ -2,11 +2,11 @@
 $main-orange: #BC6F30;
 
 .header {
-    transition: 0.2s;
+    transition: 0.5s;
 
-    padding-top: 40px;
+    padding: 40px 0px 40px 0px;
     background-color: transparent;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;

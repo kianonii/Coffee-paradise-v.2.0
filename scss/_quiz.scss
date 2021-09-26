@@ -1,0 +1,99 @@
+.quiz-section {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.quiz {
+    width: 450px;
+
+    .quiz__questions,.quiz__indicator, .results__questions {
+        margin: 0px 0px 20px 0px;
+    }
+
+    .questions__item {
+        &-question {
+            margin: 0px 0px 20px 0px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        &-answers {
+            li {
+                width: 100%;
+                padding: 10px;
+                margin: 0px 0px 10px 0px;
+                background-color: rgba($color: #dfdfdf, $alpha: .2);
+                border: 1px solid #dfdfdf;
+                border-radius: 4px;
+
+                &:hover {
+                    background-color: rgba($color: #dfdfdf, $alpha: .4);
+                }
+            }
+            
+        }
+    }
+
+    .quiz__indicator {
+        
+    }
+
+    .quiz__results {
+        display: none;
+    }
+
+    .results__item {
+        margin: 0px 0px 20px 0px;
+        &-question {
+            margin: 0px 0px 20px 0px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        &-answers {
+            li {
+                width: 100%;
+                padding: 10px;
+                margin: 0px 0px 10px 0px;
+                background-color: rgba($color: #dfdfdf, $alpha: .2);
+                border: 1px solid #dfdfdf;
+                border-radius: 4px;
+            }
+            
+        }
+    }
+
+    .questins-hidden,
+    .indicator-hidden,
+    .btnNext-hidden {
+        display: none;
+    }
+    .results-visible {
+        display: block;
+    }
+}
+
+.answer--invalid {
+    background-color: #c0392b20 !important;
+}
+
+.answer--valid {
+    background-color: #27ae6020 !important;
+}
+
+.quiz__btn-next {
+    padding: 7px 13px;
+    border-radius: 4px;
+    border: none;
+
+    background-color: #BC6F30;
+    color: #fff;
+    &:disabled {
+        background-color: #c99c77;
+        color: #dfdfdf;
+    }
+}

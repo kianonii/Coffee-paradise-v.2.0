@@ -46,7 +46,7 @@ if(navLinks.length > 0) {
 const header = document.querySelector('header');
 
 window.onscroll = function() {
-    if(window.pageYOffset > 100) {
+    if(window.pageYOffset > 50) {
         header.classList.add('scrolled')
     }else {
         header.classList.remove('scrolled')

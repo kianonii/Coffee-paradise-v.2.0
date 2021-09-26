@@ -2,6 +2,7 @@
 @import 'global';
 @import 'standart';
 @import 'footer';
+@import 'quiz';
 
 // colors
 $main-orange: #BC6F30;
@@ -77,6 +78,11 @@ $main-orange: #BC6F30;
                 align-items: center;
                 color: #fff;
                 border: 1px solid transparent;
+                a {
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                }
                 span {
                     margin: 0px 0px 0px 8px;
                 }

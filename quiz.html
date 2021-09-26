@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header" style="z-index: 1000">
+      <div class="container header__container">
+        <a href="#" class="site__logo">
+          <img src="img/icons/logo-dark.svg" alt="logo" />
+        </a>
+        <div class="navbar">
+          <div class="navbar__icon">
+            <span></span>
+          </div>
+
+          <div class="navbar__body">
+            <ul class="nav">
+              <li class="nav__item">
+                <a href="index.html" class="go-home-link"
+                  ><img src="img/icons/prev.svg" alt="" /> Повернутися на
+                  головну</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="quiz-section">
+      <div class="quiz" id="quiz">
+        <div class="quiz__questions questions" id="questions">
+        </div>
+
+        <div class="quiz__indicator" id="indicator">1/10</div>
+
+        <div class="quiz__results results" id="results">
+        </div>
+
+        <div class="quiz__controls">
+          <button class="quiz__btn-next" id="button-next" disabled>
+            Наступне питання
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/quiz.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

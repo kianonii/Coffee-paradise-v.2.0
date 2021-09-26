@@ -133,6 +133,19 @@ body {
     padding: 5px 0;
 }
 
+// go home link
+
+.go-home-link {
+    color: #000;
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 18px;
+        margin-right: 10px;
+    }
+}
+
 // carousel controls 
 
 
