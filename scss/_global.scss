@@ -190,6 +190,9 @@ body {
 // back to top button
 
 .back-to-top {
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
     transition: 0.2s;
 
     position: fixed;
