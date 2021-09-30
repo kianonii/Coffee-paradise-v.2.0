@@ -68,29 +68,34 @@ $main-orange: #BC6F30;
 
         .hero-btn {
             transition: 0.2s;
-            display: none;
-            @media screen and (min-width: 768px) {
-                display: flex;
-                padding: 12px 23px 12px 22px;
-                background-color: $main-orange;
-                border-radius: 4px;
-                justify-content: center;
-                align-items: center;
+            // display: none;
+            display: flex;
+            padding: 12px 23px 12px 22px;
+            background-color: $main-orange;
+            border-radius: 4px;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            border: 1px solid transparent;
+            a {
                 color: #fff;
-                border: 1px solid transparent;
-                a {
-                    color: #fff;
-                    display: flex;
-                    align-items: center;
-                }
-                span {
-                    margin: 0px 0px 0px 8px;
-                }
+                display: flex;
+                align-items: center;
+            }
+            span {
+                margin: 0px 0px 0px 8px;
+            }
 
-                &:hover {
-                    border: 1px solid $main-orange;
-                    background-color: transparent;
-                }
+            &:hover {
+                border: 1px solid $main-orange;
+                background-color: transparent;
+            }
+
+            @media screen and (max-width: 768px) {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
             };
         }
     }

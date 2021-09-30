@@ -437,6 +437,12 @@ body._lock {
   z-index: 1;
 }
 
+@media screen and (max-width: 768px) {
+  .back-to-top {
+    display: none;
+  }
+}
+
 .back-to-top:hover {
   background-color: #fff;
 }
@@ -927,41 +933,48 @@ button {
 .hero-section .hero__content .hero-btn {
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px 23px 12px 22px;
+  background-color: #BC6F30;
+  border-radius: 4px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  border: 1px solid transparent;
 }
 
-@media screen and (min-width: 768px) {
+.hero-section .hero__content .hero-btn a {
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero-section .hero__content .hero-btn span {
+  margin: 0px 0px 0px 8px;
+}
+
+.hero-section .hero__content .hero-btn:hover {
+  border: 1px solid #BC6F30;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 768px) {
   .hero-section .hero__content .hero-btn {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 12px 23px 12px 22px;
-    background-color: #BC6F30;
-    border-radius: 4px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    color: #fff;
-    border: 1px solid transparent;
-  }
-  .hero-section .hero__content .hero-btn a {
-    color: #fff;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .hero-section .hero__content .hero-btn span {
-    margin: 0px 0px 0px 8px;
-  }
-  .hero-section .hero__content .hero-btn:hover {
-    border: 1px solid #BC6F30;
-    background-color: transparent;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 90%;
   }
 }
 
