@@ -837,6 +837,7 @@ $main-orange: #BC6F30;
             justify-content: center;
             .reviews-dots {
                 .owl-dot {
+                    transition: 0.2s ease-in-out;
                     background: transparent;
                     // border: 1px solid $main-orange;
                     background-color: rgba($color: #000000, $alpha: .1);
@@ -849,6 +850,7 @@ $main-orange: #BC6F30;
 
                     &.active {
                         background-color: $main-orange;
+                        width: 50px;
                     }
                 }
             }
