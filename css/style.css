@@ -421,25 +421,28 @@ body._lock {
 .back-to-top {
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  position: fixed;
-  right: 50px;
-  bottom: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 6px 15px;
-  border: none;
-  border-radius: 5px;
-  z-index: 1;
+  display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .back-to-top {
-    display: none;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 6px 15px;
+    border: none;
+    border-radius: 5px;
+    z-index: 1;
   }
 }
 
@@ -970,11 +973,7 @@ button {
 
 @media screen and (max-width: 768px) {
   .hero-section .hero__content .hero-btn {
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    width: 90%;
+    display: none;
   }
 }
 
@@ -1492,8 +1491,6 @@ button {
 }
 
 .advantages .container .advantages-grid .item {
-  -webkit-transition: 0.15s;
-  transition: 0.15s;
   padding: 29px 26px 37px 26px;
   max-width: 520px;
   display: -webkit-box;
@@ -1501,14 +1498,22 @@ button {
   display: flex;
   border-radius: 10px;
   background-color: #FAFAFA;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: perspective(1000px);
+          transform: perspective(1000px);
 }
 
 .advantages .container .advantages-grid .item__icon {
   margin: 0px 24px 0px 0px;
+  -webkit-transform: translateZ(20px);
+          transform: translateZ(20px);
 }
 
 .advantages .container .advantages-grid .item__content {
   max-width: 360px;
+  -webkit-transform: translateZ(20px);
+          transform: translateZ(20px);
 }
 
 .advantages .container .advantages-grid .item__content .item-title {

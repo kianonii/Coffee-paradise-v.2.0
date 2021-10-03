@@ -68,7 +68,6 @@ $main-orange: #BC6F30;
 
         .hero-btn {
             transition: 0.2s;
-            // display: none;
             display: flex;
             padding: 12px 23px 12px 22px;
             background-color: $main-orange;
@@ -92,10 +91,7 @@ $main-orange: #BC6F30;
             }
 
             @media screen and (max-width: 768px) {
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 90%;
+               display: none;
             };
         }
     }
@@ -506,20 +502,24 @@ $main-orange: #BC6F30;
             
 
             .item {
-                transition: 0.15s;
+                // transition: 0.15s;
 
                 padding: 29px 26px 37px 26px;
                 max-width: 520px;
                 display: flex;
                 border-radius: 10px;
                 background-color: #FAFAFA;
+                transform-style: preserve-3d;
+                transform: perspective(1000px);
 
                 &__icon {
                     margin: 0px 24px 0px 0px;
+                    transform: translateZ(20px);
                 }
 
                 &__content {
                     max-width: 360px;
+                    transform: translateZ(20px);
 
                     .item-title {
                         font-weight: 700;
